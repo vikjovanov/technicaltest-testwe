@@ -4,14 +4,16 @@ import getIdFromUrl from "../../utils/getIdFromUrl";
 const BooksSectionList = (props) => {
     const { title, urlsArray } = props;
     return (
-        <p>
+        <div>
             <h3>{title}</h3>
-            {urlsArray?.map((bookUrl, index) => (
-                <Link key={index} to={`/book/${getIdFromUrl(bookUrl)}`}>
-                    <p>{bookUrl}</p>
-                </Link>
-            ))}
-        </p>
+            <div>
+                {urlsArray?.map((bookUrl, index) => (
+                    <Link key={index} to={`/book/${getIdFromUrl(bookUrl)}`}>
+                        <p>{bookUrl}</p>
+                    </Link>
+                ))}
+            </div>
+        </div>
     );
 };
 
